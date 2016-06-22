@@ -1,0 +1,19 @@
+-baselinerepo: Release
+-dsannotations: *
+-releaserepo: Release
+-runee:	JavaSE-1.8
+-runfw:	org.eclipse.osgi
+-runproperties.eqnx: 				\
+	osgi.console.enable.builtin=false, \
+	osgi.console=
+
+-runsystemcapabilities.dflt: ${native_capability}
+-sources: true
+
+javac.source: 					1.8
+javac.target: 					1.8
+
+# JUnit
+junit: org.apache.servicemix.bundles.junit; version=4.12
+
+Service-Component: *
