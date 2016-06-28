@@ -29,5 +29,10 @@
 
 -plugin.5.Neon: \
 	aQute.bnd.repository.p2.provider.P2Repository; \
-		name = Neon; \
-		url=http://download.eclipse.org/eclipse/updates/4.6milestones/S-4.6RC4a-201606061100/
+		name = "Neon"; \
+		url= "http://download.eclipse.org/releases/neon/"
+
+-plugin.6.Liferay: \
+  aQute.bnd.repository.maven.provider.MavenBndRepository; \
+  	releaseUrl=https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public/; \
+    name=Liferay

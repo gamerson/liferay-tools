@@ -1,0 +1,31 @@
+-buildpath: \
+	com.liferay.source.formatter,\
+	org.eclipse.core.resources,\
+	org.eclipse.core.runtime,\
+	org.eclipse.equinox.common,\
+	org.eclipse.equinox.registry,\
+	osgi.annotation;version=6.0.1,\
+	osgi.core;version=6.0,\
+	osgi.cmpn;version=6.0
+
+-testpath: \
+	${junit}
+
+Bundle-ActivationPolicy: lazy
+Bundle-SymbolicName: com.liferay.tools.core; singleton:=true
+Bundle-Version: 1.0.0.${tstamp}
+
+Import-Package: \
+	!com.liferay.portal.kernel.search.geolocation,\
+	*
+
+Conditional-Package: \
+	com.liferay.*,\
+	com.thoughtworks.*
+
+Include-Resource: \
+	@com.liferay.source.formatter-1.0.230.jar,\
+	plugin.xml=_plugin.xml
+	
+Private-Package: \
+	com.liferay.tools.core.builder

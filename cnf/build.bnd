@@ -10,8 +10,8 @@
 -runsystemcapabilities.dflt: ${native_capability}
 -sources: true
 
-javac.source: 					1.8
-javac.target: 					1.8
+javac.source: 1.8
+javac.target: 1.8
 
 # JUnit
 junit: org.apache.servicemix.bundles.junit; version=4.12
