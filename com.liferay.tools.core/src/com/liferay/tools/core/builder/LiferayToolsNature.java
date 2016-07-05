@@ -11,6 +11,8 @@ import org.eclipse.core.runtime.CoreException;
 
 public class LiferayToolsNature implements IProjectNature {
 
+	public static final Object ID = "com.liferay.tools.core.nature";
+
 	private IProject project;
 
     @Override

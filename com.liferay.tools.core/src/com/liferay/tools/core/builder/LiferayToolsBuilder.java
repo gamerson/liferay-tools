@@ -53,7 +53,9 @@ public class LiferayToolsBuilder extends IncrementalProjectBuilder {
 		try {
 			sourceFormatter.format();
 			List<String> errors = sourceFormatter.getErrorMessages();
+			System.out.println(errors);
 		} catch (Exception e) {
+			System.out.println(e);
 		}
 
 	}

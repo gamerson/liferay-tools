@@ -1,5 +1,8 @@
 -buildpath: \
 	com.liferay.source.formatter,\
+	com.liferay.tools.deps,\
+	org.apache.commons.io,\
+	org.eclipse.core.commands,\
 	org.eclipse.core.resources,\
 	org.eclipse.core.runtime,\
 	org.eclipse.equinox.common,\
@@ -17,15 +20,26 @@ Bundle-Version: 1.0.0.${tstamp}
 
 Import-Package: \
 	!com.liferay.portal.kernel.search.geolocation,\
+	!de.hunsicker.*,\
+	!javax.portlet.*,\
+	!javax.servlet.*,\
+	!org.apache.*,\
+	!org.gjt.*,\
+	!org.jaxen.*,\
+	!org.xmlpull.*,\
 	*
 
 Conditional-Package: \
 	com.liferay.*,\
-	com.thoughtworks.*
+	com.thoughtworks.*,\
+	org.apache.tools.ant.*,\
+	org.dom4j.*
 
 Include-Resource: \
 	@com.liferay.source.formatter-1.0.230.jar,\
 	plugin.xml=_plugin.xml
 	
 Private-Package: \
-	com.liferay.tools.core.builder
+	com.liferay.tools.core.builder,\
+	org.apache.commons.io.*,\
+	org.apache.tools.ant.types.selectors.*
