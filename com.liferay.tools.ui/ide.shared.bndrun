@@ -1,5 +1,6 @@
 workspace.bundles: \
-	com.liferay.tools.core.;version=latest
+	com.liferay.tools.core;version=latest,\
+	com.liferay.tools.ui;version=latest
 	
 gogo.bundles:\
 	org.apache.felix.gogo.command,\
@@ -112,6 +113,7 @@ crossplatform.bundles: \
 	org.eclipse.equinox.simpleconfigurator,\
 	org.eclipse.equinox.simpleconfigurator.manipulator,\
 	org.eclipse.equinox.util,\
+	org.eclipse.jdt.annotation;version='[1.1.0,2)',\
 	org.eclipse.jdt.core,\
 	org.eclipse.jdt.core.manipulation,\
 	org.eclipse.jdt.debug,\
@@ -153,7 +155,8 @@ crossplatform.bundles: \
 	org.w3c.css.sac,\
 	org.w3c.dom.events,\
 	org.w3c.dom.smil,\
-	org.w3c.dom.svg
+	org.w3c.dom.svg,\
+	${workspace.bundles}
 
 crossplatform.vmargs: -Xmx1024m
 

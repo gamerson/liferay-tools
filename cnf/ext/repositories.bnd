@@ -27,12 +27,17 @@
 		pretty = true; \
 		local = ${build}/release
 
--plugin.5.Neon: \
-	aQute.bnd.repository.p2.provider.P2Repository; \
-		name = "Neon"; \
-		url= "http://download.eclipse.org/releases/neon/"
+-plugin.5.Mars: \
+	aQute.bnd.deployer.repository.FixedIndexedRepo; \
+		name=Mars; \
+		locations=https://dl.bintray.com/gamerson/mars-r5/index.xml.gz
 
 -plugin.6.Liferay: \
-  aQute.bnd.repository.maven.provider.MavenBndRepository; \
-  	releaseUrl=https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public/; \
-    name=Liferay
+	aQute.bnd.repository.maven.provider.MavenBndRepository; \
+		releaseUrl=https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public/; \
+		name=Liferay
+
+-plugin.7.Orbit: \
+	aQute.bnd.deployer.repository.FixedIndexedRepo; \
+		name=Orbit; \
+		locations=http://download.eclipse.org/tools/orbit/downloads/drops/R20160221192158/repository/index.xml.gz
