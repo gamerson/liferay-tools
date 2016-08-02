@@ -1,6 +1,6 @@
 -buildpath: \
 	com.liferay.source.formatter,\
-	com.liferay.tools.deps,\
+	com.thoughtworks.qdox,\
 	org.apache.commons.io,\
 	org.eclipse.core.commands,\
 	org.eclipse.core.jobs,\
@@ -8,9 +8,11 @@
 	org.eclipse.core.runtime,\
 	org.eclipse.equinox.common,\
 	org.eclipse.equinox.registry,\
+	org.dom4j,\
 	osgi.annotation;version=6.0.1,\
 	osgi.core;version=6.0,\
-	osgi.cmpn;version=6.0
+	osgi.cmpn;version=6.0,\
+	org.apache.ant:ant
 
 -testpath: \
 	${junit}
@@ -37,7 +39,7 @@ Conditional-Package: \
 	org.dom4j.*
 
 Include-Resource: \
-	@com.liferay.source.formatter-1.0.230.jar,\
+	@com.liferay.source.formatter-*.jar,\
 	plugin.xml=_plugin.xml
 	
 Private-Package: \

@@ -1,5 +1,9 @@
 package com.liferay.tools.core.builder;
 
+import com.liferay.source.formatter.SourceFormatter;
+import com.liferay.source.formatter.SourceFormatterArgs;
+import com.liferay.source.formatter.SourceFormatterMessage;
+
 import java.util.List;
 import java.util.Map;
 
@@ -9,9 +13,6 @@ import org.eclipse.core.resources.IncrementalProjectBuilder;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
-
-import com.liferay.source.formatter.SourceFormatter;
-import com.liferay.source.formatter.SourceFormatterArgs;
 
 @SuppressWarnings("restriction")
 public class LiferayToolsBuilder extends IncrementalProjectBuilder {
@@ -52,8 +53,7 @@ public class LiferayToolsBuilder extends IncrementalProjectBuilder {
 
 		try {
 			sourceFormatter.format();
-			List<String> errors = sourceFormatter.getErrorMessages();
-			System.out.println(errors);
+			List<SourceFormatterMessage> msgs = sourceFormatter.getSourceFormatterMessages();
 		} catch (Exception e) {
 			System.out.println(e);
 		}

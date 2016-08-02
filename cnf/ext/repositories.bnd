@@ -41,3 +41,8 @@
 	aQute.bnd.deployer.repository.FixedIndexedRepo; \
 		name=Orbit; \
 		locations=http://download.eclipse.org/tools/orbit/downloads/drops/R20160221192158/repository/index.xml.gz
+
+-plugin.8.SWTBot: \
+	aQute.bnd.repository.p2.provider.P2Repository; \
+		name=SWTBot; \
+		url=http://download.eclipse.org/technology/swtbot/releases/latest/
