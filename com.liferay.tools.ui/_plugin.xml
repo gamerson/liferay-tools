@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.5"?>
+<plugin>
+  <extension
+        point="org.eclipse.ui.menus">
+     <menuContribution
+           allPopups="false"
+           locationURI="popup:org.eclipse.ui.projectConfigure?after=additions">
+           <command
+                 commandId="com.liferay.tools.ui.builder.addLiferayToolsNatureCommand"
+                 label="foo"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <and>
+             <objectState name="nature" value="org.eclipse.jdt.core.javanature"/>
+             
+           </and>
+			</visibleWhen>
+           </command>
+     </menuContribution>
+  </extension>
+  <extension
+        point="org.eclipse.ui.commands">
+     <command
+           defaultHandler="com.liferay.tools.core.builder.AddToolsNatureCommandHandler"
+           id="com.liferay.tools.ui.builder.addLiferayToolsNatureCommand"
+           name="Add Liferay Tools Nature">
+     </command>
+  </extension>
+
+</plugin>
