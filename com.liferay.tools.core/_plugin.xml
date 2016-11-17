@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin>
+	<extension id="com.liferay.ide.core.liferayNature" point="org.eclipse.core.resources.natures">
+		<runtime>
+			<run class="com.liferay.tools.core.LiferayNature">
+			</run>
+		</runtime>
+	</extension>
+</plugin>

@@ -1,0 +1,15 @@
+-plugin.B.bndrepo = \
+	aQute.bnd.repository.osgi.OSGiRepository; \
+		name=bnd.master; \
+		locations=https://bndtools.ci.cloudbees.com/job/bnd.next/593/artifact/dist/bundles/index.xml.gz; \
+		max_stale = 1800
+
+-plugin.N.Eclipse.Neon: \
+    aQute.bnd.repository.p2.provider.P2Repository; \
+        name                =   "Eclipse 4.6 (Neon)"; \
+        url                 =   "http://download.eclipse.org/eclipse/updates/4.6/R-4.6-201606061100/"
+
+-plugin.O.Orbit.Neon: \
+    aQute.bnd.repository.p2.provider.P2Repository; \
+        name                =   "Orbit (Neon)"; \
+        url                 =   "http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository/"

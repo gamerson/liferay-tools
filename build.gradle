@@ -12,6 +12,10 @@ import aQute.bnd.osgi.Constants
 buildscript {
   dependencies {
     classpath bndPlugin
+    classpath 'com.liferay:com.liferay.gradle.plugins.source.formatter:1.0.43'
+  }
+  repositories {
+    mavenLocal()
   }
 }
 
@@ -24,9 +28,18 @@ ext.cnf = rootProject.project(bnd_cnf)
 
 /* Configure the subprojects */
 subprojects {
+  buildscript {
+    dependencies {
+      classpath 'com.liferay:com.liferay.gradle.plugins.source.formatter:1.0.43'
+    }
+    repositories {
+      mavenLocal()
+    }
+  }
   def bndProject = bndWorkspace.getProject(name)
   if (bndProject != null) {
     plugins.apply 'biz.aQute.bnd'
+    plugins.apply 'com.liferay.source.formatter'
   }
 }
 

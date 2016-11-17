@@ -1,0 +1,15 @@
+-buildpath: \
+	org.eclipse.core.resources,\
+	org.eclipse.core.runtime,\
+	org.eclipse.equinox.common,\
+	osgi.core;version=6.0,\
+	osgi.cmpn;version=6.0
+
+Bundle-SymbolicName: com.liferay.tools.core;singleton:=true
+
+Bundle-ActivationPolicy: lazy
+
+Export-Package: com.liferay.tools.core
+
+Include-Resource: \
+	plugin.xml=_plugin.xml
