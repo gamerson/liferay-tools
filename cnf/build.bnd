@@ -1,3 +1,39 @@
-#
-# This file is left open for you to define your macros
-#
+javac.source: 			1.8
+javac.target: 			1.8
+-runee:					JavaSE-1.8
+
+Service-Component: *
+-dsannotations: *
+-metatypeannotations: *
+-contract: *
+
+test-cases: ${classes;NAMED;*Test}
+-resolve.effective: resolve, active
+
+-plugin.neon: \
+	aQute.bnd.repository.p2.provider.P2Repository; \
+	name="Eclpse Neon"; \
+	url="http://download.eclipse.org/releases/neon/201703231000/"; \
+	location="${build}/cache/stable/EclipseNeon"
+	
+-plugin.orbit: \
+	aQute.bnd.repository.p2.provider.P2Repository; \
+	name="Eclpse Orbit"; \
+	url="http://download.eclipse.org/tools/orbit/R-builds/R20170516192513/repository/"; \
+	location="${build}/cache/stable/EclipseOrbit"
+
+-runfw: org.eclipse.osgi
+
+-runblacklist:	\
+	osgi.identity;filter:='(osgi.identity=osgi.enroute.base.api)', \
+	osgi.identity;filter:='(osgi.identity=osgi.cmpn)', \
+	osgi.identity;filter:='(osgi.identity=osgi.core)', \
+	osgi.identity;filter:='(osgi.identity=biz.aQute.junit)', \
+	osgi.identity;filter:='(osgi.identity=biz.aQute.launcher)', \
+	osgi.identity;filter:='(osgi.identity=biz.aQute.remote.launcher)'
+
+-runpath.eqnx: osgi.enroute.equinox.log.adapter
+-runrequires.eqnx: osgi.identity;filter:='(osgi.identity=org.apache.felix.log)'
+
+-runsystempackages.eqnx: javax.script
+-runsystemcapabilities.dflt: ${native_capability}

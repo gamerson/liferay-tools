@@ -1,48 +1,43 @@
-/*
- * Master Gradle build script
- *
- * Depends on bndPlugin property set by settings.gradle.
- * and bnd_* values from gradle.properties.
- */
-
-import aQute.bnd.build.Workspace
-import aQute.bnd.osgi.Constants
-
-/* Add bnd gradle plugin as a script dependency */
 buildscript {
-  dependencies {
-    classpath bndPlugin
-    classpath 'com.liferay:com.liferay.gradle.plugins.source.formatter:1.0.43'
-  }
-  repositories {
-    mavenLocal()
-  }
+	dependencies {
+		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.source.formatter", version: "latest.release"
+	}
+
+	repositories {
+		maven {
+			url "https://repository-cdn.liferay.com/nexus/content/groups/public"
+		}
+	}
 }
 
-/* Initialize the bnd workspace */
-Workspace.setDriver(Constants.BNDDRIVER_GRADLE)
-Workspace.addGestalt(Constants.GESTALT_BATCH, null)
-ext.bndWorkspace = new Workspace(rootDir, bnd_cnf).setOffline(gradle.startParameter.offline)
+repositories {
+	maven {
+		url "https://repository-cdn.liferay.com/nexus/content/groups/public"
+	}
+}
 
-ext.cnf = rootProject.project(bnd_cnf)
-
-/* Configure the subprojects */
 subprojects {
-  buildscript {
-    dependencies {
-      classpath 'com.liferay:com.liferay.gradle.plugins.source.formatter:1.0.43'
-    }
-    repositories {
-      mavenLocal()
-    }
-  }
-  def bndProject = bndWorkspace.getProject(name)
-  if (bndProject != null) {
-    plugins.apply 'biz.aQute.bnd'
-    plugins.apply 'com.liferay.source.formatter'
-  }
-}
+	buildscript {
+		dependencies {
+			classpath group: "com.liferay", name: "com.liferay.gradle.plugins.source.formatter", version: "latest.release"
+		}
 
-task wrapper(type: Wrapper) {
-  jarFile = rootProject.file('.gradle-wrapper/gradle-wrapper.jar')
+		repositories {
+			maven {
+				url "https://repository-cdn.liferay.com/nexus/content/groups/public"
+			}
+		}
+	}
+
+	repositories {
+		maven {
+			url "https://repository-cdn.liferay.com/nexus/content/groups/public"
+		}
+	}
+
+	apply plugin: 'com.liferay.source.formatter'
+
+	formatSource {
+		maxLineLength 120
+	}
 }
