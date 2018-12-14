@@ -10,16 +10,16 @@ Service-Component: *
 test-cases: ${classes;NAMED;*Test}
 -resolve.effective: resolve, active
 
--plugin.neon: \
+-plugin.oxygen: \
 	aQute.bnd.repository.p2.provider.P2Repository; \
-	name="Eclpse Neon"; \
-	url="http://download.eclipse.org/releases/neon/201703231000/"; \
-	location="${build}/cache/stable/EclipseNeon"
+	name="Eclpse Oxygen"; \
+	url="http://download.eclipse.org/releases/oxygen/201803211000/"; \
+	location="${build}/cache/stable/EclipseOxygen"
 	
 -plugin.orbit: \
 	aQute.bnd.repository.p2.provider.P2Repository; \
 	name="Eclpse Orbit"; \
-	url="http://download.eclipse.org/tools/orbit/R-builds/R20170516192513/repository/"; \
+	url="http://download.eclipse.org/tools/orbit/downloads/drops/R20180206163158/repository/"; \
 	location="${build}/cache/stable/EclipseOrbit"
 
 -runfw: org.eclipse.osgi

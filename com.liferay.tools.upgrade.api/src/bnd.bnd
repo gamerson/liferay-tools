@@ -1,0 +1,7 @@
+Bundle-ActivationPolicy: lazy
+Bundle-Name: Liferay Tools Upgrade API
+Bundle-SymbolicName: com.liferay.tools.upgrade.api;singleton:=true
+Bundle-Vendor: Liferay, Inc.
+-buildpath:\
+	org.eclipse.core.runtime,\
+	org.eclipse.core.resources
